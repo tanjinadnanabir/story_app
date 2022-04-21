@@ -4,11 +4,19 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link href="https://fonts.googleapis.com/?css2family=Nunito:wgt@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+    <script src="{{asset('js/app.js')}}" defer></script>
+
+    <!-- <style>
+        body > div > div > div.grid.grid-cols-1.
+    </style> -->
+
 </head>
-<body>
+<body class="antialiased overflow-hidden">
+    <nav class="flex flex-col text-center sm-flex-row"
     @foreach ($posts as $post)
         {{$post->title}}
         {{$post->body}}
