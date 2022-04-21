@@ -6,6 +6,11 @@
     </x-slot>
 
     <div class="py-2">
+        @if (session()->has('status'))
+            <div class="mb-5 bg-purple-500 text-white text-sm py-2 px-4">
+                {{session('status')}}
+            </div>
+        @endif
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-gray-800">
@@ -37,8 +42,8 @@
                                             <td class="px-6 py-4 whitespace-nowrap">{{$post->title}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap">{{$post->body}}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <a href="" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white text-sm py-1 px-2 rounded">Edit</a>
-                                            <a href="" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white text-sm py-1 px-2 rounded">Delete</a>
+                                            <a href="{{url('/post/edit', $post->id)}}" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white text-sm py-1 px-2 rounded">Edit</a>
+                                            <a href="{{url('/post/delete', $post->id)}}" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white text-sm py-1 px-2 rounded">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
