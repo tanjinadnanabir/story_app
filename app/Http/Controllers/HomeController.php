@@ -8,7 +8,7 @@ use App\Models\Post;
 class HomeController extends Controller
 {
     public function show_post(){
-        $posts = Post::paginate(3);
+        $posts = Post::paginate(4);
         return view('home', ['posts'=>$posts]);
     }
 }

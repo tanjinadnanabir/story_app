@@ -11,6 +11,7 @@ class DashboardController extends Controller
         // $posts = Post::all();
         $userid = $request->user()->id;
         $posts = Post::where('user_id', $userid)->get();
+        // $posts = Post::paginate(4);
         return view('dashboard', ['posts'=>$posts]);
     }
 
