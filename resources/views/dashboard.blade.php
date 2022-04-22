@@ -44,6 +44,8 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                             <a href="{{url('/post/edit', $post->id)}}" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white text-sm py-1 px-2 rounded">Edit</a>
                                             <a href="{{url('/post/delete', $post->id)}}" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white text-sm py-1 px-2 rounded">Delete</a>
+                                            <a class="btn btn-secondary btn-sm float-left mr-2" href="{{url('api/json-api/'.$post['id'])}}">JSON</a>
+                                            <a class="btn btn-secondary btn-sm float-left mr-2" href="{{url('api/xml-api/'.$post['id'])}}">XML</a>
                                             </td>
                                         </tr>
                                         @endforeach
